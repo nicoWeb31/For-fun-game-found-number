@@ -26,9 +26,15 @@ document.querySelector('.check').addEventListener('click', function () {
     if (!guess) {
         document.querySelector('.message').textContent =
             ' No number Please try a number';
+    //player win css green
     } else if (guess === secretNumber) {
         document.querySelector('.message').textContent =
             'Correct number 🙂 BRAVO !!!';
+        const body = document.querySelector('body');
+        body.style.backgroundColor = 'green';
+
+        document.querySelector('.number').style.width = '30rem'
+    //to low        
     } else if (guess < secretNumber) {
         if (score > 1) {
             document.querySelector('.message').textContent = 'To low ! ';
@@ -36,6 +42,7 @@ document.querySelector('.check').addEventListener('click', function () {
             document.querySelector('.score').textContent = score;
         } else {
         }
+    //to hight    
     } else if (guess > secretNumber) {
         if(score > 1){
             document.querySelector('.message').textContent = 'To hight ! ';
