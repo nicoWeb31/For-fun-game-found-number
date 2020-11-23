@@ -14,7 +14,7 @@ console.log(document.querySelector('.guess').value);
 const secretNumber = Math.trunc(Math.random() * 20) + 1; //trunc supp apres la virgule
 console.log('🚀 ~ file: script.js ~ line 14 ~ secretNumber', secretNumber);
 
-document.querySelector('.number').textContent = secretNumber;
+
 
 //score
 let score = 20;
@@ -32,8 +32,9 @@ document.querySelector('.check').addEventListener('click', function () {
             'Correct number 🙂 BRAVO !!!';
         const body = document.querySelector('body');
         body.style.backgroundColor = 'green';
-
         document.querySelector('.number').style.width = '30rem'
+        document.querySelector('.number').textContent = secretNumber;
+
     //to low        
     } else if (guess < secretNumber) {
         if (score > 1) {
@@ -56,6 +57,33 @@ document.querySelector('.check').addEventListener('click', function () {
 
 
     }
+
+
+    //reset functionnalite
+    //1 select the button reset plus event click
+
+    document.querySelector('.again').addEventListener('click', function () {
+        //restore initial value hightscore
+        let hightscore = document.querySelector('.highscore').textContent;
+        console.log("🚀 ~ file: script.js ~ line 68 ~ hightscore", hightscore)
+        if(score > hightscore){
+            return document.querySelector('.highscore').textContent = score;
+        }
+
+
+        //restore intial value of number variable;
+        document.querySelector('.score').textContent = 20;
+        document.querySelector('.number').textContent = Math.trunc(Math.random() * 20) + 1;
+
+        //resotre value message
+        document.querySelector('.message').textContent = 'Start guessing...';
+
+        document.querySelector('body').style.backgroundColor="#222";
+        document.querySelector('.number').style.width='15rem'
+
+    })
+
+
 
     // document.querySelector('.score').textContent --;
     // if(document.querySelector('.score').textContent < 0 ){
