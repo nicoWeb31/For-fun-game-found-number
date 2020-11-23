@@ -17,6 +17,9 @@ console.log('🚀 ~ file: script.js ~ line 14 ~ secretNumber', secretNumber);
 //score
 let score = 20;
 
+//higscore scor
+let hightscore = 0
+
 document.querySelector('.check').addEventListener('click', function () {
     let guess = document.querySelector('.guess').value * 1;
     console.log(typeof guess);
@@ -33,11 +36,10 @@ document.querySelector('.check').addEventListener('click', function () {
         document.querySelector('.number').style.width = '30rem';
         document.querySelector('.number').textContent = secretNumber;
 
-        //restore initial value hightscore
-        let hightscore = document.querySelector('.highscore').textContent;
-        console.log('🚀 ~ file: script.js ~ line 68 ~ hightscore', hightscore);
+        //value hightscore
         if (score > hightscore) {
-            return (document.querySelector('.highscore').textContent = score);
+            hightscore = score;
+            document.querySelector('.highscore').textContent = hightscore;
         }
 
         //to low
