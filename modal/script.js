@@ -28,11 +28,9 @@ overlay.addEventListener('click', hiddenModal);
 //close modale with echap key press
 document.addEventListener('keydown', function (e) {
     console.log('a key was pressed ! ', e.key);
-    if (e.key === 'Escape') {
+    if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
         console.log('esc was pressed');
-        if (!modal.classList.contains('hidden')) {
-            hiddenModal();
-        }
+        hiddenModal();
 
     }
 });
