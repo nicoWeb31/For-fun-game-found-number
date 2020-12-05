@@ -227,3 +227,38 @@ printGoals(...game.scored)
 
 const winner = team1 < team2 ? `la  team 1 win the game with ${team1} ` : `la  team 1 win the game with ${team2} `;
 console.log(winner)
+
+const test = Object.entries(game.scored)
+console.log("🚀 ~ file: script.js ~ line 232 ~ test", test)
+
+for(let [i, goal] of game.scored.entries()) {
+  console.log(`goal${i + 1} : ${goal}`)
+
+}
+
+
+let moyenne = 0;
+for(let el of Object.values(game.odds)){
+moyenne += el;
+moyenne = moyenne / Object.values(game.odds).length; //ou moyenne /= Object.values(game.odds).length;
+console.log(el)
+}
+
+console.log(moyenne)
+
+// 3. Print the 3 odds to the console, but in a nice formatted way, exactly like this:
+// Odd of victory Bayern Munich: 1.33
+// Odd of draw: 3.25
+// Odd of victory Borrussia Dortmund: 6.5
+// Get the team names directly from the game object, don't hardcode them
+// (except for "draw"). Hint: Note how the odds and the game objects have the
+// same property names 😉
+
+for (let [team, odd] of Object.entries(game.odds)){
+console.log("🚀 ~ file: script.js ~ line 258 ~ odd", odd)
+console.log("🚀 ~ file: script.js ~ line 258 ~ team", team)
+
+console.log(`Odd of victory ${ team === 'team1' ? 'Bayern Munich' : team === 'team2' ? 'Borrussia Dortmund': 'draw'} : ${odd}`)
+
+  
+}
