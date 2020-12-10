@@ -15,24 +15,37 @@
 // Data car 1: 'BMW' going at 120 km/h
 // Data car 2: 'Mercedes' going at 95 km/h
 
-const Car = function(make, speed){
-    this.make = make;
-    this.speed = speed;
+// const Car = function (make, speed) {
+//     this.make = make;
+//     this.speed = speed;
+// };
+
+// Car.prototype.accelerate = function () {
+//     this.speed += 10;
+//     console.log(`${this.make} going to ${this.speed}`);
+// };
+
+// Car.prototype.decrease = function () {
+//     this.speed -= 5;
+//     console.log(`${this.make} going to ${this.speed}`);
+// };
+
+// const car1 = new Car('BMW', 120);
+// car1.accelerate();
+// car1.decrease();
+
+// const car2 = new Car('Mercedes', 95);
+// car2.accelerate();
+
+class Car {
+    constructor(make, speed) {
+        this.make = make;
+        this.speed = speed;
+    }
+    accelerate() {
+        console.log(`${this.make} going to ${this.speed}`);
+    }
+    decrease() {
+        console.log(`${this.make} going to ${this.speed}`);
+    }
 }
-
-Car.prototype.accelerate = function () {
-    this.speed += 10;
-    console.log(`${this.make} going to ${this.speed}`)
-
-}
-
-Car.prototype.decrease = function () {
-    this.speed -= 5;
-    console.log(`${this.make} going to ${this.speed}`)
-}
-
-const car1 = new Car('BMW', 120);
-car1.accelerate()
-
-const car2 = new Car('Mercedes', 95)
-car2.accelerate()
